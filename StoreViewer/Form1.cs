@@ -44,8 +44,6 @@ namespace StoreViewer
                 if (brokenData)
                     throw new Exception();
 
-                loadComboBoxes();
-
                 var prodSt = comboBox1.Text == "-any-" ?
                          from p in XDocument.Load(label23.Text).Descendants("Product")
                          select p :
@@ -291,6 +289,11 @@ namespace StoreViewer
             comboBox4.Text = "-any-";
             comboBox4.Items.Add("expired");
             comboBox4.Items.Add("unepired");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

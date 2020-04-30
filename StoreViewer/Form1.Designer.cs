@@ -56,9 +56,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
@@ -330,14 +330,14 @@
             this.panel1.Size = new System.Drawing.Size(492, 201);
             this.panel1.TabIndex = 27;
             // 
-            // label19
+            // label21
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(9, 15);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(46, 13);
-            this.label19.TabIndex = 28;
-            this.label19.Text = "Data file";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(331, 39);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(10, 13);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "-";
             // 
             // label20
             // 
@@ -348,14 +348,14 @@
             this.label20.TabIndex = 27;
             this.label20.Text = "Expired";
             // 
-            // label21
+            // label19
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(331, 39);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(10, 13);
-            this.label21.TabIndex = 28;
-            this.label21.Text = "-";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(9, 15);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(46, 13);
+            this.label19.TabIndex = 28;
+            this.label19.Text = "Data file";
             // 
             // button3
             // 
@@ -459,6 +459,7 @@
             this.MinimumSize = new System.Drawing.Size(526, 421);
             this.Name = "Form1";
             this.Text = "Store Data Viewer";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
