@@ -223,7 +223,9 @@
             this.MaximumSize = new System.Drawing.Size(642, 140);
             this.MinimumSize = new System.Drawing.Size(642, 140);
             this.Name = "FormAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Record";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAdd_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
