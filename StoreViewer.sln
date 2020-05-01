@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreViewer", "StoreViewer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreDataCreator", "StoreDataCreator\StoreDataCreator.csproj", "{E8F54F3C-3216-4A15-83F3-D618910FFC6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{9596A892-1492-4C7A-98CB-72297D1E39F6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{E8F54F3C-3216-4A15-83F3-D618910FFC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8F54F3C-3216-4A15-83F3-D618910FFC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8F54F3C-3216-4A15-83F3-D618910FFC6D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9596A892-1492-4C7A-98CB-72297D1E39F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9596A892-1492-4C7A-98CB-72297D1E39F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9596A892-1492-4C7A-98CB-72297D1E39F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9596A892-1492-4C7A-98CB-72297D1E39F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
