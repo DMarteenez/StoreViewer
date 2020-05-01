@@ -14,13 +14,15 @@ namespace StoreViewer
 {
     public partial class FormAdd : Form
     {
-        string dataFilePath;
+        DataRepository dataRep;
+        Form1 parrent;
 
-        public FormAdd(string _dataFilePath)
+        public FormAdd(Form _parrent, DataRepository _dataRep)
         {
             InitializeComponent();
 
-            dataFilePath = _dataFilePath;
+            dataRep = _dataRep;
+            parrent = _parrent as Form1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,35 +49,30 @@ namespace StoreViewer
             }
             else
             {
-                var foundProduct = from p in XDocument.Load(dataFilePath).Descendants("Product")
-                                   where (int)p.Attribute("ID") == (int)numericUpDown2.Value
-                                   select p;
-                
-                if (foundProduct.Count() > 0)
+                dataRep.Add(new Product(
+                    (int)numericUpDown1.Value,
+                    (int)numericUpDown2.Value,
+                    textBox3.Text,
+                    dateTimePicker1.Value,
+                    (int)numericUpDown3.Value,
+                    (int)numericUpDown4.Value,
+                    (double)numericUpDown5.Value));
+                if (dataRep._errorOccurred)
                 {
-                    MessageBox.Show("Error: Record with ID = " + (int)numericUpDown2.Value + " already exists.");
+                    MessageBox.Show(dataRep._errorMessage);
+                    dataRep._errorOccurred = false;
                 }
                 else
                 {
-                    XDocument doc = XDocument.Load(dataFilePath);
-
-                    var newProduct = new XElement("Product",
-                                        new XAttribute("ID", (int)numericUpDown2.Value),
-                                        new XElement("StoreID", (int)numericUpDown1.Value),
-                                        new XElement("Name", textBox3.Text),
-                                        new XElement("Date", dateTimePicker1.Value.ToString("yyyy-MM-dd")),
-                                        new XElement("ShelfLife", (int)numericUpDown3.Value),
-                                        new XElement("Quantity", (int)numericUpDown4.Value),
-                                        new XElement("Price", (double)numericUpDown5.Value)
-                                    );
-
-                    doc.Element("Products").Add(newProduct);
-                    doc.Save(dataFilePath);
-
-                    MessageBox.Show("Record added sucessfully.");
-                } 
+                    MessageBox.Show("Record added sucessfully."); 
+                }
+                
             }
-            //label2.Text = dataFilePath;
+        }
+
+        private void FormAdd_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parrent.button1_Click(sender, e);
         }
     }
 }
