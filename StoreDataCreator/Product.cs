@@ -13,6 +13,7 @@ namespace StoreDataCreator
         public string name;
         public DateTime arrivalDate;
         public int shelfLife;
+        public bool expired;
         public int quantity;
         public double price;
 
@@ -20,7 +21,7 @@ namespace StoreDataCreator
         {
         }
 
-            public  Product(int _storeID, int _ID, string _name, DateTime _arrivalDate, int _shelfLife, int _quantity, double _price)
+        public  Product(int _storeID, int _ID, string _name, DateTime _arrivalDate, int _shelfLife, int _quantity, double _price)
         {
             storeID = _storeID;
             ID = _ID;

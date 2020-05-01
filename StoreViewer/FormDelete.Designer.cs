@@ -73,7 +73,9 @@
             this.MaximumSize = new System.Drawing.Size(259, 148);
             this.MinimumSize = new System.Drawing.Size(259, 148);
             this.Name = "FormDelete";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Record";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDelete_FormClosed);
             this.ResumeLayout(false);
 
         }
