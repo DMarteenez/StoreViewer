@@ -21,7 +21,10 @@ namespace Test
 
             string path = datRep.GetFilePath();
 
-            Assert.AreEqual(path, "Doc.xml");
+            if (!path.Equals("Doc.xml"))
+            {
+                Assert.Fail();
+            }
         }
         [TestMethod]
         public void TestMethod2()
@@ -402,7 +405,6 @@ namespace Test
             result[4] += 5 + "\n";
             result[6] += 10 + "\n";
             result[7] += 5 + "\n";
-            List<Product> prod2 = datRep._prods;
             for (int i = 0; i < 8; i++)
             {
                 if (i != 5)

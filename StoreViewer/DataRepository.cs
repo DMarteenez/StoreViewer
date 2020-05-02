@@ -79,6 +79,7 @@ namespace StoreViewer
                 double dblTest;
                 string strTest;
                 DateTime dateTest;
+                List<int> uniqueIDchech = new List<int>();
 
                 foreach (var i in prods)
                 {
@@ -89,6 +90,31 @@ namespace StoreViewer
                     dblTest = i.price;
                     strTest = i.name;
                     dateTest = i.arrivalDate;
+
+                    if(i.name == "")
+                    {
+                        _errorOccurred = true;
+                        _errorMessage = "Error: Empty name found.";
+                        return;
+                    }
+
+                    if(i.ID < 1)
+                    {
+                        _errorOccurred = true;
+                        _errorMessage = "Error: ID < 1 found.";
+                        return;
+                    }
+
+                    if (uniqueIDchech.Contains(i.ID))
+                    {
+                        _errorOccurred = true;
+                        _errorMessage = "Error: Unique ID violation occured.";
+                        return;
+                    }
+                    else
+                    {
+                        uniqueIDchech.Add(i.ID);
+                    }
                 }
 
                 _prods.Clear();
@@ -156,6 +182,21 @@ namespace StoreViewer
                     _errorMessage = "Error: Product with ID = " + newPr.ID + " already exists.";
                     return;
                 }
+
+            }
+
+            if (newPr.name == "")
+            {
+                _errorOccurred = true;
+                _errorMessage = "Error: Empty name not allowed.";
+                return;
+            }
+
+            if (newPr.ID < 1)
+            {
+                _errorOccurred = true;
+                _errorMessage = "Error: ID must be > 0.";
+                return;
             }
 
             _prods.Add(newPr);
